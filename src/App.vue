@@ -1,30 +1,31 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <TheHeader />
+  <main class="page-content">
+    <router-view />
+  </main>
+  <ModalWindow />
+  <UpButton />
+  <TheFooter />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import TheHeader from '@/components/header/TheHeader'
+import TheFooter from '@/components/TheFooter'
+import ModalWindow from '@/components/ModalWindow'
+import UpButton from './components/UpButton.vue'
 
-nav {
-  padding: 30px;
+export default {
+  name: 'App',
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  components: {
+    TheHeader,
+    TheFooter,
+    ModalWindow,
+    UpButton
   }
 }
+</script>
+
+<style lang="scss">
+
 </style>
